@@ -1,0 +1,17 @@
+server:
+  port: 8000
+  servlet:
+    contextPath: /
+
+#management:
+#  endpoints:
+#    web:
+#      base-path: /
+#      exposure:
+#        include: health
+#        exclude: '*'
+#  endpoint:
+#    health:
+#      show-components: always
+#      show-details: always
+

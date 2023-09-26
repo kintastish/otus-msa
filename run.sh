@@ -1,0 +1,1 @@
+java -XX:+UseContainerSupport -XX:+UseG1GC -Xms128m -Xmx256m -Xss1m -jar $1
