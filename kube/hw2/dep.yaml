@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tiny-app-dep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tiny-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: tiny-app
+    spec:
+      containers:
+        - name: app-cont
+          image: kintastish/tiny-app:v1
+          ports:
+            - containerPort: 8000
+          livenessProbe:
+            httpGet:
+              path: health
+              port: 8000
+            initialDelaySeconds: 60
+            periodSeconds: 10
+
+
